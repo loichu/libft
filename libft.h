@@ -1,18 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   libft.a                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lhumbert <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/11 11:14:37 by lhumbert          #+#    #+#             */
-/*   Updated: 2021/10/11 12:24:33 by lhumbert         ###   ########.fr       */
+/*   Created: 2021/10/11 11:18:42 by lhumbert          #+#    #+#             */
+/*   Updated: 2021/10/12 20:39:27 by lhumbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalpha(int c)
-{
-	if (c < 65 || c > 122 || (c > 90 && c < 97))
-		return (0);
-	return (1);
-}
+int	ft_isalpha(int c);
+int	ft_isdigit(int c);
+int	ft_isalnum(int c);
+int	ft_isascii(int c);
