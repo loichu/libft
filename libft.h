@@ -6,7 +6,7 @@
 /*   By: lhumbert <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 11:18:42 by lhumbert          #+#    #+#             */
-/*   Updated: 2021/10/18 17:50:12 by lhumbert         ###   ########.fr       */
+/*   Updated: 2021/10/18 17:56:39 by lhumbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,3 +25,5 @@ void*	ft_memmove(void* dst, const void* src, size_t len);
 size_t	ft_strlcpy(char* dst, const char* src, size_t dstsize);
 size_t	ft_strlcat(char* dst, const char *src, size_t dstsize);
 int		ft_tolower(int c);
+char	*ft_strchr(const char *s, int c);
+char	*ft_strrchr(const char *s, int c);
