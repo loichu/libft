@@ -6,7 +6,7 @@
 #    By: lhumbert <marvin@42lausanne.ch>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/14 17:48:26 by lhumbert          #+#    #+#              #
-#    Updated: 2021/10/15 14:29:32 by lhumbert         ###   ########.fr        #
+#    Updated: 2021/10/18 14:46:51 by lhumbert         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,8 @@ CC=gcc
 CFLAGS = -Wall -Wextra -Werror -I.
 
 SRCS = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
-	   ft_strlen.c ft_memset.c ft_bzero.c ft_memcpy.c ft_memmove.c
+	   ft_strlen.c ft_memset.c ft_bzero.c ft_memcpy.c ft_memmove.c \
+	   ft_strlcpy.c ft_strlcat.c
 
 OBJS = $(SRCS:.c=.o)
 
