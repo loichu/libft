@@ -6,7 +6,7 @@
 /*   By: lhumbert <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/21 20:59:20 by lhumbert          #+#    #+#             */
-/*   Updated: 2021/10/22 01:07:20 by lhumbert         ###   ########.fr       */
+/*   Updated: 2021/10/22 01:18:41 by lhumbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-int ft_getmult(int n)
+int	ft_getmult(int n)
 {
 	int	ret;
 
@@ -24,24 +24,26 @@ int ft_getmult(int n)
 	return (ret);
 }
 
-int	ft_initdigits(int *n)
+int	ft_initdigits(int *n, char *neg)
 {
 	char	dgts;
 	int		mult;
 
-	dgts = 0;
+	*neg = 0;
+	dgts = 10;
 	if (*n < 0)
 	{
+		*neg = 1;
 		dgts++;
 		*n *= -1;
 	}
-	mult = 10;
-	while (*n / mult > 0)
+	mult = 1000000000;
+	while (*n / mult == 0)
 	{
-		dgts++;
-		mult *= 10;
+		dgts--;
+		mult /= 10;
 	}
-	return (dgts + 1);
+	return (dgts);
 }
 
 char	*ft_itoa(int n)
@@ -53,10 +55,7 @@ char	*ft_itoa(int n)
 
 	if (n == -2147483648)
 		return (ft_strdup("-2147483648"));
-	neg = 0;
-	if (n < 0)
-		neg = 1;
-	dgts = ft_initdigits(&n);
+	dgts = ft_initdigits(&n, &neg);
 	ret = (char *)malloc(sizeof(char) * (dgts + 1));
 	if (!ret)
 		return (NULL);
@@ -71,6 +70,5 @@ char	*ft_itoa(int n)
 	}
 	*(ret++) = 48 + n;
 	*ret = '\0';
-	printf("\ndgts: %d\tFinal: %s\n", dgts, (ret - dgts));
 	return (ret - dgts);
 }
