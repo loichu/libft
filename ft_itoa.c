@@ -6,13 +6,12 @@
 /*   By: lhumbert <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/21 20:59:20 by lhumbert          #+#    #+#             */
-/*   Updated: 2021/10/22 01:18:41 by lhumbert         ###   ########.fr       */
+/*   Updated: 2021/10/22 01:19:32 by lhumbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
-#include <stdio.h>
 
 int	ft_getmult(int n)
 {
