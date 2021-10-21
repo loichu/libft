@@ -6,7 +6,7 @@
 /*   By: lhumbert <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/21 01:00:16 by lhumbert          #+#    #+#             */
-/*   Updated: 2021/10/21 02:25:17 by lhumbert         ###   ########.fr       */
+/*   Updated: 2021/10/22 00:43:40 by lhumbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	char	*ret;
 	size_t	len;
 
+	if (!(s1 && set))
+		return (NULL);
 	len = ft_strlen(s1);
 	while (ft_inset(*s1, set))
 	{
