@@ -6,11 +6,13 @@
 /*   By: lhumbert <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/13 15:03:29 by lhumbert          #+#    #+#             */
-/*   Updated: 2021/10/13 16:53:00 by lhumbert         ###   ########.fr       */
+/*   Updated: 2021/10/21 02:09:40 by lhumbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-unsigned int	ft_strlen(char *str)
+#include "libft.h"
+
+size_t	ft_strlen(const char *str)
 {
 	unsigned int	i;
 
