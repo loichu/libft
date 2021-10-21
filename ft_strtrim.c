@@ -6,13 +6,12 @@
 /*   By: lhumbert <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/21 01:00:16 by lhumbert          #+#    #+#             */
-/*   Updated: 2021/10/21 02:21:56 by lhumbert         ###   ########.fr       */
+/*   Updated: 2021/10/21 02:25:17 by lhumbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
-#include <stdio.h>
 
 char	ft_inset(char c, char const *set)
 {
