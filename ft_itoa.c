@@ -6,7 +6,7 @@
 /*   By: lhumbert <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/21 20:59:20 by lhumbert          #+#    #+#             */
-/*   Updated: 2021/10/22 00:03:52 by lhumbert         ###   ########.fr       */
+/*   Updated: 2021/10/22 01:07:20 by lhumbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,40 +24,25 @@ int ft_getmult(int n)
 	return (ret);
 }
 
-int	ft_nbdigits(int n)
+int	ft_initdigits(int *n)
 {
 	char	dgts;
 	int		mult;
 
 	dgts = 0;
-	mult = 10;
-	while (n / mult > 1)
+	if (*n < 0)
 	{
-		printf("%d / %d = %d\n", n, mult, n / mult);
+		dgts++;
+		*n *= -1;
+	}
+	mult = 10;
+	while (*n / mult > 0)
+	{
 		dgts++;
 		mult *= 10;
 	}
 	return (dgts + 1);
 }
-
-//char	*ft_retminint()
-//{
-//	char	minint[12];
-//	char	*ret;
-//	int		i;
-//
-//	minint = "-2147483648";
-//	ret	= (char *)malloc(sizeof(char) * 12);
-//	if (!ret)
-//		return (NULL);
-//	i = -1;
-//	while (minint[++i])
-//	{
-//		ret[i] = minint[i];
-//	}
-//	ret[i] = '\0';
-//	return (ret);
-//}
 
 char	*ft_itoa(int n)
 {
@@ -68,35 +53,24 @@ char	*ft_itoa(int n)
 
 	if (n == -2147483648)
 		return (ft_strdup("-2147483648"));
-	printf("n: %d\n", n);
-	dgts = ft_nbdigits(n);
 	neg = 0;
 	if (n < 0)
-	{
-		printf("< 0\n");
 		neg = 1;
-		dgts++;
-		n *= -1;
-	}
-	printf("n: %d\tnb digits: %d\n", n, dgts);
+	dgts = ft_initdigits(&n);
 	ret = (char *)malloc(sizeof(char) * (dgts + 1));
 	if (!ret)
 		return (NULL);
 	if (neg)
 		*(ret++) = '-';
-	//ret[dgts] = '\0';
 	mult = ft_getmult(n);
 	while (mult > 1)
 	{
-		printf("m: %d\n", mult);
-		printf("current digit: %d\n", n / mult);
 		*(ret++) = 48 + (n / mult);
 		n -= (n / mult) * mult;
 		mult /= 10;
 	}
 	*(ret++) = 48 + n;
 	*ret = '\0';
-	ret -= dgts;
-	printf("ret: %s\n", ret);
-	return (ret);
+	printf("\ndgts: %d\tFinal: %s\n", dgts, (ret - dgts));
+	return (ret - dgts);
 }
