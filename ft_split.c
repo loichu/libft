@@ -6,13 +6,12 @@
 /*   By: lhumbert <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/21 19:41:24 by lhumbert          #+#    #+#             */
-/*   Updated: 2021/10/21 20:14:54 by lhumbert         ###   ########.fr       */
+/*   Updated: 2021/10/22 00:19:35 by lhumbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
-#include <stdio.h>
 
 size_t	ft_cntparts(char const *s, char c)
 {
