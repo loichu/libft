@@ -6,7 +6,7 @@
 /*   By: lhumbert <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/19 02:08:52 by lhumbert          #+#    #+#             */
-/*   Updated: 2021/10/21 00:48:44 by lhumbert         ###   ########.fr       */
+/*   Updated: 2021/10/22 02:04:26 by lhumbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 		}
 		else
 		{
-			len = len + i - 1;
+			len = len + i;
 			haystack -= i;
 			i = 0;
 		}
