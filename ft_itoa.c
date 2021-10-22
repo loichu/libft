@@ -6,7 +6,7 @@
 /*   By: lhumbert <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/21 20:59:20 by lhumbert          #+#    #+#             */
-/*   Updated: 2021/10/22 01:19:32 by lhumbert         ###   ########.fr       */
+/*   Updated: 2021/10/22 02:26:09 by lhumbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,8 @@ char	*ft_itoa(int n)
 
 	if (n == -2147483648)
 		return (ft_strdup("-2147483648"));
+	if (n == 0)
+		return (ft_strdup("0"));
 	dgts = ft_initdigits(&n, &neg);
 	ret = (char *)malloc(sizeof(char) * (dgts + 1));
 	if (!ret)
