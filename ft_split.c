@@ -6,7 +6,7 @@
 /*   By: lhumbert <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/21 19:41:24 by lhumbert          #+#    #+#             */
-/*   Updated: 2021/10/22 00:19:35 by lhumbert         ###   ########.fr       */
+/*   Updated: 2021/10/22 17:32:43 by lhumbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,21 +26,29 @@ size_t	ft_cntparts(char const *s, char c)
 			ret++;
 		i++;
 	}
-	return (ret);
+	return (ret + 1);
+}
+
+char	**ft_freebiga(char **biga, size_t i)
+{
+	while (i--)
+		free(biga[i]);
+	free(biga);
+	return (NULL);
 }
 
 char	**ft_split(char const *s, char c)
 {
-	size_t	asize;
 	size_t	len;
 	char	**ret;
+	size_t	i;
 
 	if (!s)
 		return (NULL);
-	asize = ft_cntparts(s, c);
-	ret = (char **)malloc(sizeof(char *) * (asize + 1));
+	ret = (char **)malloc(sizeof(char *) * ft_cntparts(s, c));
 	if (!ret)
 		return (NULL);
+	i = 0;
 	while (*s)
 	{
 		while (*s == c)
@@ -49,10 +57,11 @@ char	**ft_split(char const *s, char c)
 		while (s[len] && s[len] != c)
 			len++;
 		if (len)
-			*(ret++) = ft_substr(s, 0, len);
+			ret[i] = ft_substr(s, 0, len);
+		if (len && !ret[i++])
+			return (ft_freebiga(ret, i));
 		s += len;
 	}
-	*ret = NULL;
-	ret -= asize;
+	ret[i] = NULL;
 	return (ret);
 }
