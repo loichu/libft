@@ -6,7 +6,7 @@
 /*   By: lhumbert <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/15 13:57:39 by lhumbert          #+#    #+#             */
-/*   Updated: 2021/10/15 14:00:12 by lhumbert         ###   ########.fr       */
+/*   Updated: 2021/10/22 02:14:23 by lhumbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	char*	str;
+	char	*str;
 
-	str = (char*) s;
+	str = (char *) s;
 	while (n-- > 0)
 		*(str++) = (unsigned char) 0;
 }

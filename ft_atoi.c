@@ -6,7 +6,7 @@
 /*   By: lhumbert <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/20 22:14:15 by lhumbert          #+#    #+#             */
-/*   Updated: 2021/10/19 04:34:29 by lhumbert         ###   ########.fr       */
+/*   Updated: 2021/10/22 02:14:00 by lhumbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ char	*skip_spaces(const char *str)
 {
 	while (ft_isspace(*str))
 		str++;
-	return ((char*)str);
+	return ((char *)str);
 }
 
 int	ft_atoi(const char *str)

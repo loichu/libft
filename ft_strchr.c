@@ -6,7 +6,7 @@
 /*   By: lhumbert <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/18 17:56:59 by lhumbert          #+#    #+#             */
-/*   Updated: 2021/10/18 18:04:39 by lhumbert         ###   ########.fr       */
+/*   Updated: 2021/10/22 02:09:47 by lhumbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,10 @@ char	*ft_strchr(const char *s, int c)
 	while (*s)
 	{
 		if (*s == (char)c)
-			return ((char*)s);
+			return ((char *)s);
 		s++;
 	}
 	if (*s == '\0' && (char)c == '\0')
-		return ((char*)s);
+		return ((char *)s);
 	return (0);
 }
