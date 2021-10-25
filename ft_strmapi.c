@@ -6,7 +6,7 @@
 /*   By: lhumbert <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/22 02:30:03 by lhumbert          #+#    #+#             */
-/*   Updated: 2021/10/22 03:30:20 by lhumbert         ###   ########.fr       */
+/*   Updated: 2021/10/25 20:52:21 by lhumbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 		return (NULL);
 	i = -1;
 	while (s[++i])
-	{
 		ret[i] = f(i, s[i]);
-	}
 	ret[i] = '\0';
 	return (ret);
 }

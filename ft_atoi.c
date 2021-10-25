@@ -6,7 +6,7 @@
 /*   By: lhumbert <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/20 22:14:15 by lhumbert          #+#    #+#             */
-/*   Updated: 2021/10/22 02:14:00 by lhumbert         ###   ########.fr       */
+/*   Updated: 2021/10/25 20:28:49 by lhumbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,22 @@ char	*skip_spaces(const char *str)
 	return ((char *)str);
 }
 
+/*
+ *	Checks whether i will overflow after a multplication by 10 and an addition
+ *	of a in absolut value. Sign paramater with value 1 or -1 is used to know
+ *	the actual sign;
+ *
+ *	returns -1 if negative overflow, 1 if positive overflow, 0 otherwise.
+ */
+char	ft_intwilloverflow(int i, int a, char sign)
+{
+	if (i < 214748364)
+		return (0);
+	if (i > 214748364 || (sign > 0 && a > 7) || (sign < 0 && a > 8))
+		return (sign);
+	return (0);
+}
+
 int	ft_atoi(const char *str)
 {
 	char	sign;
@@ -50,9 +66,9 @@ int	ft_atoi(const char *str)
 		a++;
 	while (ft_isdigit(*a))
 	{
-		if (i > 214748364 && sign > 0)
+		if (ft_intwilloverflow(i, *a - 48, sign) > 0)
 			return (-1);
-		if (i > 214748364 && sign < 0)
+		if (ft_intwilloverflow(i, *a - 48, sign) < 0)
 			return (0);
 		i *= 10;
 		i += *(a++) - 48;

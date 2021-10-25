@@ -6,7 +6,7 @@
 /*   By: lhumbert <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/18 15:59:38 by lhumbert          #+#    #+#             */
-/*   Updated: 2021/10/22 02:09:09 by lhumbert         ###   ########.fr       */
+/*   Updated: 2021/10/25 19:22:15 by lhumbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,20 +19,15 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	unsigned int	i;
 
 	i = ft_strlen(dst);
-	src_len = ft_strlen((char *)src);
+	src_len = ft_strlen(src);
 	rem = src_len;
 	if (dstsize <= i)
 		rem += dstsize;
 	else
 		rem += i;
 	dst += i;
-	while (*src && i + 1 < dstsize)
-	{
-		*dst = *src;
-		dst++;
-		src++;
-		i++;
-	}
+	while (*src && ++i < dstsize)
+		*(dst++) = *(src++);
 	*dst = '\0';
 	return (rem);
 }
